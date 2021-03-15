@@ -29,9 +29,9 @@ namespace RSVP
                     rsvp.Reports.Add(report1);
                 }
 
-                if (TextBoxTitle2.Text != "" || TextBoxTextAnnot2.Text != "")
+                if (TextBoxTitle.Text != "" || TextBoxTextAnnot.Text != "")
                 {
-                    Report report2 = new Report(TextBoxTitle2.Text, TextBoxTextAnnot2.Text);
+                    Report report2 = new Report(TextBoxTitle.Text, TextBoxTextAnnot.Text);
                     rsvp.Reports.Add(report2);
                 }
 
@@ -55,6 +55,11 @@ namespace RSVP
                     Response.Redirect("sorryyoucantcome.html");
                 }
             }
+        }
+
+        protected void TextBoxTitle_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

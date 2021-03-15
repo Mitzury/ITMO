@@ -32,7 +32,7 @@
          </div>
       <div>
          Введите название доклада:
-         <asp:TextBox ID="TextBoxTitle" runat="server" Width="345px"></asp:TextBox>
+         <asp:TextBox ID="TextBoxTitle" runat="server" Width="345px" OnTextChanged="TextBoxTitle_TextChanged"></asp:TextBox>
         </div>
       <div>
          Введите аннотацию доклада:
