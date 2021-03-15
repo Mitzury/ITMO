@@ -18,15 +18,16 @@
  </td>
  </tr>
  <tr>
- <td class="auto-style4">Меню: <br />
+ <td class="auto-style4"><b>Меню:</b><br />
      <asp:Menu ID="Menu1" runat="server"> 
          <Items>
-            <asp:MenuItem NavigateUrl ="~/Start.aspx" Text="Главная"/>
-            <asp:MenuItem NavigateUrl ="~/Reg.aspx" Text="Регистрация"/>
-            <asp:MenuItem NavigateUrl ="~/Summary.aspx" Text="Отчет о регистрации"/>
-            <asp:MenuItem NavigateUrl="~/SummaryBD.aspx" Text="Список участников"/>
-            <asp:MenuItem NavigateUrl="~/About.aspx" Text="Подробности"/>
+             <asp:MenuItem NavigateUrl ="~/Start.aspx" Text="Главная"/>
+             <asp:MenuItem NavigateUrl ="~/Reg.aspx" Text="Регистрация"/>
+             <asp:MenuItem NavigateUrl ="~/Summary.aspx" Text="Отчет о регистрации"/>
+             <asp:MenuItem NavigateUrl="~/SummaryBD.aspx" Text="Список участников"/>
+             <asp:MenuItem NavigateUrl="~/About.aspx" Text="Подробности"/>
          </Items>
+         <StaticMenuStyle BorderColor="Black" />
      </asp:Menu>
  </td>
  <td class="auto-style5">
