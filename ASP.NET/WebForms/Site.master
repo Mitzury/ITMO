@@ -26,7 +26,6 @@
             <asp:MenuItem NavigateUrl ="~/Summary.aspx" Text="Отчет о регистрации"/>
             <asp:MenuItem NavigateUrl="~/SummaryBD.aspx" Text="Список участников"/>
             <asp:MenuItem NavigateUrl="~/About.aspx" Text="Подробности"/>
-             <asp:MenuItem Text="Создать элемент" Value="Создать элемент"></asp:MenuItem>
          </Items>
      </asp:Menu>
  </td>
@@ -47,9 +46,9 @@
                                 <li><a href="About.aspx">Подробности</a></li>
                             </ul>
                         </div>
-     <div class="footer">
-                        <asp:Literal ID="VisitorLiteral" runat="server"/>
-                          </div>
+<div class="footer">
+    <asp:Literal ID="VisitorLiteral" runat="server"/>
+</div>
  </td>
  </tr>
  </table>
