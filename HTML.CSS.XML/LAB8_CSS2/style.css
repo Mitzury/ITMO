@@ -1,0 +1,22 @@
+h1, h2, h3 {
+    color: #000080;
+    font-family: Times, serif;
+    border-bottom: 1px solid #000080;
+    padding-top: 7px;
+}
+h1 {
+    font-size: 3em;
+    border-bottom: 2px solid #000080;
+    padding-bottom: 20px;
+}
+
+.interesting {
+    font-style: italic;
+}
+
+#info {
+    background-color: #FAF0E6;
+    padding: 0;
+    margin: 0 auto;
+    width: 800px;
+}

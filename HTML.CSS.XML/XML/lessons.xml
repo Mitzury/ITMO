@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TimeTable SYSTEM "DTD.dtd">
+
+<TimeTable>
+	<item>
+		<name>Курс №1</name>
+		<teacher>Преподаватель №1</teacher>
+		<begin>2012-01-01</begin>
+		<end>2012-01-15</end>
+		<description>Описание курса №1</description>
+	</item>
+	<item>
+		<name>Курс №1</name>
+		<teacher>Преподаватель №2</teacher>
+		<begin>2013-01-01</begin>
+		<end>2014-01-15</end>
+		<description>Описание курса №2</description>
+	</item>
+	</TimeTable>
