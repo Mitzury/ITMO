@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Summary.aspx.cs" Inherits="RSVP.Summary" MasterPageFile="~/Site.master" %>
+﻿  
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Summary.aspx.cs" Inherits="RSVP.Summary" MasterPageFile="~/Site.master" %>
 
  <asp:Content ID="MainContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -36,7 +37,7 @@
  </tr>
      </thead>
   <tbody>
-<%@ GetNoShowHtml()%>
+<%= GetNoShowHtml()%>
      </tbody>
      </table>
  </asp:Content>
