@@ -1,0 +1,37 @@
+﻿@model Control_TASK_ASP_MVC.Models.Student
+
+@{
+    ViewBag.Title = "Ranking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View Ranking</h2>
+
+<h3>Студенты</h3>
+<table class="table">
+    <tr>
+
+        <td><p>Оценка ранжирование лучшие   </p></td>
+    </tr>
+    @foreach (var c in ViewBag.StudentsFiveBest)
+    {
+        <tr>
+            <td><p>@c.LastName</p></td>
+            <td><p>@c.Mark</p></td>
+        </tr>
+    }
+</table>
+<table class="table">
+    <tr>
+
+        <td><p>Оценка ранжирование худшие   </p></td>
+    </tr>
+    @foreach (var c in ViewBag.StudentsFiveWorth)
+    {
+        <tr>
+            <td><p>@c.LastName</p></td>
+            <td><p>@c.Mark</p></td>
+        </tr>
+    }
+</table>
+
