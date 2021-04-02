@@ -1,0 +1,29 @@
+﻿@model Control_TASK_ASP_MVC.Models.Student
+
+@{
+    ViewBag.Title = "Summary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Summary</h2>
+<h2>Sum</h2>
+<h3>Студенты</h3>
+<table class="table">
+    <tr>
+
+        <td><p>Оценка сумма    </p></td>
+    </tr>
+    @foreach (var c in ViewBag.Students)
+    {
+<tr>
+    <td><p>@c.LastName</p></td>
+    <td><p>@c.Mark</p></td>
+</tr>
+
+    }
+<tr>
+
+    <td><p> TotalAmount : @ViewBag.TotalAmount </p></td>
+</tr>
+</table>
+
