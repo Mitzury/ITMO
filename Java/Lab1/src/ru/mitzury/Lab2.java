@@ -1,2 +1,8 @@
-package ru.mitzury;public class Lab2 {
+package ru.mitzury;
+
+public class Lab2 {
+
+
+
+
 }

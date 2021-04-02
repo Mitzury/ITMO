@@ -4,51 +4,75 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        // 1st
-        System.out.println("Я");
-        System.out.println("отвратительно");
-        System.out.println("знаю");
-        System.out.println("Java");
+
+        //1st
+
+        for (int i = 1; i <= 99; i++)
+        {
+            System.out.println("Строка №" + i);
+        }
+
         //2st
-        System.out.print("(46 + 10) * (10 / 3) =");
-        int a = (46 + 10) * (10 / 3);
-        System.out.println(a);
-        System.out.print("29 * 4 * -25 = ");
-        int b = 29 * 4 * -25;
-        System.out.println(b);
+
+        System.out.print("Числа делятся на 3: ");
+        for (int i = 1; i <= 100; i++)
+        {
+            if (i % 3 == 0)
+            System.out.print(i + " ");
+        }
+        System.out.print("\n");
+        System.out.print("Числа делятся на 5: ");
+        for (int i = 1; i <= 100; i++)
+        {
+            if (i % 5 == 0)
+                System.out.print(i + " ");
+        }
+        System.out.print("\n");
+        System.out.print("Числа делятся на 3 и 5: ");
+        for (int i = 1; i <= 100; i++)
+        {
+            if (i % 5 == 0 && i % 3 == 0)
+                System.out.print(i + " ");
+        }
+
         //3st
-        int number = 10500;
-        int result = (number / 10) / 10;
-        System.out.println(result);
-        //4st
-        double a1 = 3.6d;
-        double a2 = 4.1d;
-        double a3 = 5.9d;
-        double a4 = a1 * a2 * a3;
-        System.out.println(a4);
-        //5st
-        System.out.print("Input a number1: ");
+        System.out.print("\n");
+        System.out.println("ВВедите число 1: ");
         Scanner scanner = new Scanner(System.in);
         int num1 = scanner.nextInt();
-        System.out.print("Input a number2: ");
+        System.out.print("ВВедите число 2: ");
         Scanner scanner2 = new Scanner(System.in);
         int num2 = scanner2.nextInt();
-        System.out.print("Input a number3: ");
+        System.out.print("ВВедите число 3: ");
         Scanner scanner3 = new Scanner(System.in);
         int num3 = scanner3.nextInt();
-        System.out.println("Вы ввели num1 = " + num1 + "; num2 = " + num2 + "; num3 = " + num3);
-        //6st
-        System.out.println("Input B: ");
-        Scanner scan = new Scanner(System.in);
-        int B = scan.nextInt();
-        if (B % 2 != 0) {
-            System.out.println("нечетное");
-        } else {
-            if (B > 100) {
-                System.out.println("Вне диапазона");
-            } else {
-                System.out.println("четное");
-            }
-        }
+            if (num1 + num2 == num3)
+                System.out.print("true");
+            else
+                System.out.print("false");
+
+        //4st
+        System.out.print("\n");
+        System.out.println("ВВедите число 1: ");
+        Scanner scanner4 = new Scanner(System.in);
+        int num11 = scanner.nextInt();
+        System.out.print("ВВедите число 2: ");
+        Scanner scanner5 = new Scanner(System.in);
+        int num12 = scanner2.nextInt();
+        System.out.print("ВВедите число 3: ");
+        Scanner scanner6 = new Scanner(System.in);
+        int num13 = scanner3.nextInt();
+            if (num11 < num12 && num13 > num12)
+             System.out.print("true");
+            else
+                System.out.print("false");
+
+        //5st
+
+        System.out.print("\n");
+        int[] nums = new int[] { 3, 2, 3, 5, 3 };
+if (nums.length -1 == 3 && nums.)
+
+
     }
 }
