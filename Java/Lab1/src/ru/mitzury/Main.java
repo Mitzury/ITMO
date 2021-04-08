@@ -3,25 +3,17 @@ package ru.mitzury;
 
 import java.util.Scanner;
 
+import static ru.mitzury.Lab3.lab31;
+
 public class Main {
 
     public static void main(String[] args) {
 
 
-        boolean sorted = true;
-        int[] nums = new int[]{1, 2, 3, 4, 5};
-        if (nums.length <= 1) {
-            System.out.println("Array is sorted");
-        } else {
-            for (int i = 1; i < nums.length; i++) {
-                if (nums[i] < nums[i - 1]) {
-                    sorted = false;
-                    break;
-                }
-            }
-            System.out.println(sorted ? "ok" : "Please, try again");
-        }
+       lab31();
+
 
     }
+
 
 }
