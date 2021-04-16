@@ -1,16 +1,11 @@
 package ru.mitzury;
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
+     //   System.out.println( Lab3.lab35(1024));
 
-       Lab3.lab32();
-
-
-
+        Lab4.lab41();
     }
-
-
 }
