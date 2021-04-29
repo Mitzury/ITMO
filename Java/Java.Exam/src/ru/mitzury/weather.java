@@ -12,7 +12,7 @@ public class weather {
 
     public static String getWeather () {
 
-       String url ="http://api.openweathermap.org/data/2.5/weather?q=Saint%20Petersburg,RU?&APPID=588a4820cd92c2e68fa9bda6a56e03b8&lang=RU&units=metric";
+       String url ="http://api.openweathermap.org/data/2.5/weather?q=Saint%20Petersburg,RU?&APPID={app-id}&lang=RU&units=metric";
 
         try {
             URL obj = new URL(url);
