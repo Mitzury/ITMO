@@ -28,8 +28,8 @@ public class Main {
             System.out.println(result);
         }
         //____________________________________________
-        String file= "src/com/company/file.txt";
-        String file2= "src/com/company/file2.txt";
+        String file= "src/ru/mitzury/file.txt";
+        String file2= "src/ru/mitzury/file2.txt";
         AddString.AddFileToFile(file, file2);
         BufferedReader br = new BufferedReader(new FileReader(file));
         String string1;
