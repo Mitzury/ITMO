@@ -20,4 +20,3 @@ public interface Statistic
         public String selectMaxFreqToken( Set<String> tokens );
 
     }
-
