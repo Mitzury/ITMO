@@ -17,10 +17,6 @@ public class User
     public User(String name){
         this.name=name;
     }
-
-
-
-
     public static void map(User user, int counts)
     {
         System.out.print("имя:" +" "+ user.getName()+" "+ "очки:"+" "+ counts);
