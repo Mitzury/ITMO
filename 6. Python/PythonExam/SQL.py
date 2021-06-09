@@ -144,14 +144,10 @@ def DeleteItem():
         try:
             connection = MySQLConnection.connection()
             cursor = connection.cursor()
-            cursor.execute("SELECT id FROM mydb.categories where CatName = '{CatName}'".format(CatName=CatName))
-            id = cursor.fetchone()
-            for row in id:
-                CatN = row
-            cursor.execute("DELETE * from mydb.items where ItemName = '{ItemName}'".format(ItemName=ItemName))
+            cursor.execute("DELETE from mydb.items where ItemName = '{ItemName}'".format(ItemName=ItemName))
             connection.commit()
             connection.close()
         except Error as e:
             print(e)
-        else:
-            print("Такого товара нет")
+    else:
+        print("Такого товара нет")
