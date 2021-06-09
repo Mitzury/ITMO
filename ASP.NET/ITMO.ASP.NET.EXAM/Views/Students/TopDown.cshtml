@@ -1,0 +1,40 @@
+﻿@model ITMO.ASP.NET.EXAM.Models.Student
+@*@{
+    ViewBag.Title = "TopDown";
+}*@
+
+<h2>IT University</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create") |
+    @Html.ActionLink("Top Down", "TopDown") |
+    @Html.ActionLink("Скачать список студентов", "CreateFile")
+</p>
+
+<table class="table" width="500">
+    <tr>
+        <th><p>Top 5 Лучших</p></th>
+        <th><p>Оценка</p></th>
+    </tr>
+    @foreach (var c in ViewBag.StudentsFiveBest)
+    {
+   <tr>
+            <th><p>@c.Name</p></th>
+            <th><p>@c.DisciplineRate</p></th>
+    </tr>
+    }
+</table>
+
+<table class="table" width="500">
+    <tr>
+        <th><p>Top 5 Худших</p></th>
+        <th><p>Оценка</p></th>
+    </tr>
+    @foreach (var c in ViewBag.StudentsFiveWorth)
+    {
+        <tr>
+            <th><p>@c.Name</p></th>
+            <th><p>@c.DisciplineRate</p></th>
+        </tr>
+    }
+</table>
