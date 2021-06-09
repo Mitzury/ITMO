@@ -86,3 +86,24 @@ def ListByDate():
     except Error as e:
         print(e)
 
+def ListByCat():
+    print("Введите категориию по которой хотите посмотреть покупки")
+    ListCategory()
+    CatName = str(input())
+    try:
+        connection = MySQLConnection.connection()
+        if connection.is_connected():
+            cursor = connection.cursor()
+            cursor.execute("SELECT id FROM mydb.categories where CatName = '{CatName}'".format(CatName=CatName))
+            id = cursor.fetchone()
+            for row in id:
+                CatId = row
+            cursor.execute("SELECT * FROM mydb.items where id = {CatId}".format(CatId=CatId))
+            for row in cursor.fetchall():
+                print("Item: " + row[1] + " by price " + str(row[3]))
+            connection.close()
+
+    except Error as e:
+        print(e)
+
+
