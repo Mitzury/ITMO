@@ -4,8 +4,6 @@ import MySQLConnection
 import gc
 
 
-
-
 def AddCategory():
     print("Введите имя категории:")
     CatName = str(input())
@@ -56,16 +54,16 @@ def AddItems():
         try:
             connection = MySQLConnection.connection()
             cursor = connection.cursor()
-            cursor.execute("SELECT id FROM mydb.categories where CatName = '{CatName}'")
+            cursor.execute("SELECT id FROM mydb.categories where CatName = '{CatName}'".format(CatName=CatName))
             version = cursor.fetchone()
             print(version)
             cursor.execute("INSERT INTO mydb.items ('ItemName', 'Date', 'Price', 'CatId') VALUES ('{ItemName}',"
                            " '{Date}', "
                            "'{Price}', "
-                           "'{ItemName}')".format(ItemName=ItemName,
-                                                  Date=Date,
-                                                  Price=Price,
-                                                  CatId=version))
+                           "'{CatId}')".format(ItemName=ItemName,
+                                               Date=Date,
+                                               Price=Price,
+                                               CatId=version))
             connection.commit()
             connection.close()
         except Error as e:
