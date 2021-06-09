@@ -68,3 +68,21 @@ def AddItems():
             print(e)
     else:
         print("Такой категории нет")
+
+
+def ListByDate():
+    print("Введите дату за которую хотите посмотреть Ваши покупки: гггг-мм-дд")
+    iDate = str(input())
+    ListDate = DT.datetime.strptime(iDate, '%Y-%m-%d').date()
+    try:
+        connection = MySQLConnection.connection()
+        if connection.is_connected():
+            cursor = connection.cursor()
+            cursor.execute("SELECT * FROM mydb.items where Date = '{ListDate}'".format(ListDate=ListDate))
+            for row in cursor.fetchall():
+                print("Item: " + row[1] + " by Price: " + str(row[3]))
+            connection.close()
+
+    except Error as e:
+        print(e)
+
