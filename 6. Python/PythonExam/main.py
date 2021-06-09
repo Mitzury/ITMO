@@ -34,8 +34,10 @@ def main():
         elif cmd == "5":
             SQL.ListByCat()
         elif cmd == "6":
-            print("Такой ")
+            SQL.ListByOrder()
         elif cmd == "7":
+            SQL.DeleteItem()
+        elif cmd == "8":
             BDcheck.con()
         else:
             print("Такой команды нет. Попробуйте еще:")

@@ -35,6 +35,20 @@ def ListCategory():
         print(e)
     return categories
 
+def ListItems():
+    try:
+        connection = MySQLConnection.connection()
+        if connection.is_connected():
+            cursor = connection.cursor()
+            cursor.execute("SELECT ItemName FROM mydb.items")
+            ListItem = []
+            for row in cursor.fetchall():
+                ListItem.append(row[0])
+            connection.close()
+    except Error as e:
+        print(e)
+    return ListItem
+
 
 def AddItems():
     print("Введите имя продукта:")
@@ -86,6 +100,7 @@ def ListByDate():
     except Error as e:
         print(e)
 
+
 def ListByCat():
     print("Введите категориию по которой хотите посмотреть покупки")
     ListCategory()
@@ -107,3 +122,36 @@ def ListByCat():
         print(e)
 
 
+def ListByOrder():
+    print("Все покупки по возрастанию цены")
+    try:
+        connection = MySQLConnection.connection()
+        if connection.is_connected():
+            cursor = connection.cursor()
+            cursor.execute("SELECT * FROM mydb.items order by Price")
+            for row in cursor.fetchall():
+                print("Item: " + row[1] + " by price " + str(row[3]))
+            connection.close()
+    except Error as e:
+        print(e)
+
+
+def DeleteItem():
+    print("Введите имя покупки для удаления")
+    ItemName = str(input())
+
+    if ItemName in ListItems():
+        try:
+            connection = MySQLConnection.connection()
+            cursor = connection.cursor()
+            cursor.execute("SELECT id FROM mydb.categories where CatName = '{CatName}'".format(CatName=CatName))
+            id = cursor.fetchone()
+            for row in id:
+                CatN = row
+            cursor.execute("DELETE * from mydb.items where ItemName = '{ItemName}'".format(ItemName=ItemName))
+            connection.commit()
+            connection.close()
+        except Error as e:
+            print(e)
+        else:
+            print("Такого товара нет")
