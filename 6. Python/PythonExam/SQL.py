@@ -42,28 +42,26 @@ def AddItems():
     print("Доступные категории товаров:")
     ListCategory()
     CatName = str(input())
-    print(CatName)
     if CatName in ListCategory():
         print("Введите стоимость:")
         Price = int(input())
         print("Введите дату покупки: гггг-мм-дд")
         iDate = str(input())
         Date = DT.datetime.strptime(iDate, '%Y-%m-%d').date()
-        print(CatName)
-
         try:
             connection = MySQLConnection.connection()
             cursor = connection.cursor()
             cursor.execute("SELECT id FROM mydb.categories where CatName = '{CatName}'".format(CatName=CatName))
-            version = cursor.fetchone()
-            print(version)
-            cursor.execute("INSERT INTO mydb.items ('ItemName', 'Date', 'Price', 'CatId') VALUES ('{ItemName}',"
-                           " '{Date}', "
+            id = cursor.fetchone()
+            for row in id:
+                CatN = row
+            cursor.execute("INSERT INTO mydb.items (ItemName, Date, Price, CatId) VALUES ('{ItemName}',"
+                           "'{Date}', "
                            "'{Price}', "
                            "'{CatId}')".format(ItemName=ItemName,
                                                Date=Date,
                                                Price=Price,
-                                               CatId=version))
+                                               CatId=CatN))
             connection.commit()
             connection.close()
         except Error as e:
