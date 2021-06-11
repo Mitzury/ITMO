@@ -1,6 +1,7 @@
 import BDcheck
 import SQL
 
+
 def MainMenu():
     print("#############################")
     print("1. Добавить покупку")

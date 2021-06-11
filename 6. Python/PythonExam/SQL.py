@@ -34,6 +34,7 @@ def ListCategory():
         print(e)
     return categories
 
+
 def ListItems():
     try:
         connection = MySQLConnection.connection()
