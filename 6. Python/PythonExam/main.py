@@ -1,10 +1,5 @@
-import gc
-
 import BDcheck
 import SQL
-
-gc.disable()
-gc.get_stats()
 
 def MainMenu():
     print("#############################")

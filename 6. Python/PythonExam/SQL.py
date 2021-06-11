@@ -1,7 +1,6 @@
 from mysql.connector import Error
 import datetime as DT
 import MySQLConnection
-import gc
 
 
 def AddCategory():
