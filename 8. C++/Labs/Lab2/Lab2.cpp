@@ -67,7 +67,7 @@ int main()
     double coin001 = summ / 0.01;
         
     std::cout << "Монет по 1коп.: " << trunc(coin001) << "\n";
-    summ = summ - trunc(coin001) * 0.01;
+    summ = summ - coin001 * 0.01;
 
     std::cout << "Остаток: " << summ;
 
