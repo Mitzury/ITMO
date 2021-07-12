@@ -50,11 +50,16 @@ int main()
     std::cin >> summ;
 
     double coin10 = summ / 10;
-    std::cout << "Монет по 10р: " << trunc(coin10) << "\n";
+    std::cout << "Монет по 10р.: " << trunc(coin10) << "\n";
     summ = summ - trunc(coin10) * 10;
     double coin5 = summ / 5;
-    std::cout << "Монет по 5р: " << trunc(coin5) << "\n";
+    std::cout << "Монет по 5р.: " << trunc(coin5) << "\n";
     summ = summ - trunc(coin5) * 5;
+    double coin05 = summ / 0.5;
+    std::cout << "Монет по 50коп.: " << trunc(coin05) << "\n";
+    summ = summ - trunc(coin05) * 0.5;
+
+
     std::cout << "Остаток: " << summ;
 
 
