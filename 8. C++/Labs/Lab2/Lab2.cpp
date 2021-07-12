@@ -53,12 +53,21 @@ int main()
     std::cout << "Монет по 10р.: " << trunc(coin10) << "\n";
     summ = summ - trunc(coin10) * 10;
     double coin5 = summ / 5;
+        
     std::cout << "Монет по 5р.: " << trunc(coin5) << "\n";
     summ = summ - trunc(coin5) * 5;
     double coin05 = summ / 0.5;
+        
     std::cout << "Монет по 50коп.: " << trunc(coin05) << "\n";
     summ = summ - trunc(coin05) * 0.5;
-
+    double coin01 = summ / 0.1;
+        
+    std::cout << "Монет по 10коп.: " << trunc(coin01) << "\n";
+    summ = summ - trunc(coin01) * 0.1;
+    double coin001 = summ / 0.01;
+        
+    std::cout << "Монет по 1коп.: " << trunc(coin001) << "\n";
+    summ = summ - trunc(coin001) * 0.01;
 
     std::cout << "Остаток: " << summ;
 
