@@ -75,8 +75,9 @@ int main()
     // Lab 2. Ex. 4
 
     std::cout << "Задача о стрелке и мишени\n";
-    // Устанавливаем мишень, координаты центра 0.0
-    // Координаты диапазона мишени -5, +5
+    std::cout << "Укажите сложность игры: (0-5)\n";
+    int level;
+    std::cin >> level;
     std::cout << "Введите количество выстрелов: \n";
     int n;
     int i;
@@ -88,6 +89,8 @@ int main()
     for (i = 1; i <= n; i++)
     {
         shotX = rand() % 10 + (-5); shotY = rand() % 10 + (-5);
+        shotX = shotX + level;
+        shotY = shotY - level;
         std::cout << i << "й бросок " << "X: " << shotX << " Y: " << shotY << std::endl;
         if ((shotX <=2 && shotX >= -2) && (shotY <=2 && shotY >= -2))
         {
