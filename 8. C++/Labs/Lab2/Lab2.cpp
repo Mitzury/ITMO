@@ -104,9 +104,9 @@ int main()
             std::cout << "Вы опали в середину \n";
             coinN = coinN + 1;
         }
-        else if ((shotX > 5 && shotX < -5) && (shotY > 5 && shotY < -5))
+        else if ((shotX > 5 || shotX < -5) || (shotY > 5 || shotY < -5))
         {
-            std::cout << "Вы попали молоко \n";
+            std::cout << "Вы попали в молоко \n";
             coinMilk = coinMilk + 1;
         }
 
