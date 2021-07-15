@@ -116,4 +116,17 @@ int main()
     std::cout << "\n Попаданий в яблочко: " << coin;
     std::cout << "\n Попаданий в середину: " << coinN;
     std::cout << "\n Попаданий в молоко: " << coinMilk;
+    
+    if (coin > coinN)
+    {
+        std::cout << "Мастер спорта \n";
+    }
+    else if (coinN > coinMilk) {
+        std::cout << "Середнячок \n";
+    }
+    else {
+        std::cout << " \n Надо больше тренироваться \n";
+    }
+        
+
 }
