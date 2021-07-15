@@ -85,6 +85,8 @@ int main()
     int shotX;
     int shotY;
     int coin = 0;
+    int coinMilk = 0;
+    int coinN = 0;
 
     for (i = 1; i <= n; i++)
     {
@@ -97,11 +99,21 @@ int main()
             std::cout << "Вы попали в Яблочко \n";
             coin = coin + 1;
         }
-        else {
-            std::cout << "Вы  не попали в Яблочко \n";
+        else if ((shotX <= 5 && shotX >= -5) && (shotY <= 5 && shotY >= -5))
+        {
+            std::cout << "Вы опали в середину \n";
+            coinN = coin N + 1;
         }
+        else if ((shotX > 5 && shotX < -5) && (shotY > 5 && shotY < -5))
+        {
+            std::cout << "Вы попали молоко \n";
+            coinMilk = coinMilk + 1;
+        }
+
        
         
     }
-    std::cout << "Попаданий в яблочко: " << coin;
+    std::cout << "\n Попаданий в яблочко: " << coin;
+    std::cout << "\n Попаданий в середину: " << coinN;
+    std::cout << "\n Попаданий в молоко: " << coinMilk;
 }
