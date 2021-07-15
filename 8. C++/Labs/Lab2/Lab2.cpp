@@ -102,7 +102,7 @@ int main()
         else if ((shotX <= 5 && shotX >= -5) && (shotY <= 5 && shotY >= -5))
         {
             std::cout << "Вы опали в середину \n";
-            coinN = coin N + 1;
+            coinN = coinN + 1;
         }
         else if ((shotX > 5 && shotX < -5) && (shotY > 5 && shotY < -5))
         {
