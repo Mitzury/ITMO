@@ -31,7 +31,7 @@ int main()
         switch (Myroot(a, b, c, x1, x2))
         {
         case 1:
-            cout << "Уравнение имеет 2 корня.\nx1 = " << x1 << "\nx2 = " << x2 << endl;
+            cout << "Уравнение имеет 2 корня.\nx1 = " << x1 << "\n x2 = " << x2 << endl;
             break;
         case 0:
             cout << "Уравнение имеет 1 корень.\nx = " << x1 << endl;
