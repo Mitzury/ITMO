@@ -4,7 +4,9 @@
 // Lab 4. Ex1,2
 using namespace std;
 int Myroot(double, double, double, double&, double&);
-double a = 0, b = 0, c = 0;
+double a;
+double b;
+double c;
 
 int input()
 {
