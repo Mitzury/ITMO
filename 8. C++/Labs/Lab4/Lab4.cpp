@@ -1,67 +1,80 @@
 ﻿#include <iostream>
 #include <cmath>
 
-// Lab 4. Ex1,2
 using namespace std;
-int Myroot(double, double, double, double&, double&);
-double a;
-double b;
-double c;
 
-int input()
-{
-    cout << "Введите коэффициенты a, b, c \n";
-    if (cin >> a and cin >> b and cin >> c)
-        {
-            return a, b, c;
+// проверка, что строка является вещественным числом
+bool IsReal(const char* s) {
+    int points = 0; // количество точек
+    int haveDigits = false; // были ли цифры
+
+    for (int i = s[0] == '-' ? 1 : 0; s[i]; i++) {
+        if (s[i] == '.' || s[i] == ',') {
+            points++; 
+
+            if (points > 1) 
+                return false; 
         }
-        else
-        {
-        cout << "Вы ввели не число \n";
-        
+        else if (s[i] < '0' || s[i] > '9') { 
+            return false; 
         }
+        else {
+            haveDigits = true; 
+        }
+    }
+
+    return haveDigits;
+}
+// ввод вещественного числа с проверкой на некорректный ввод
+double ReadReal(const char* message) {
+    char s[100]; // строка для ввода
+    cout << message;
+    cin.getline(s, 100); 
+
+    while (!IsReal(s)) {
+        cout << "Invalid input, try again: ";
+        cin.getline(s, 100); 
+    }
+
+    return atof(s);
 }
 
-int main()
-{
+// ввод коэффициентов уравнения
+void ReadEquationCoefficients(double& a, double& b, double& c) {
+    a = ReadReal("Enter a: ");
+    b = ReadReal("Enter b: ");
+    c = ReadReal("Enter c: ");
+}
+
+// решение квадратного уравнения
+void SolveEquation(double a, double b, double c) {
+    double d = b * b - 4 * a * c; // вычисляем дискриминант
+
+    if (d < 0) {
+        d = sqrt(-d); // извлекаем корень из дискриминанта
+        double re = -b / (2 * a); 
+        double im = fabs(d / (2 * a));
+
+        cout << "Первый корень: x1 = " << re << "-" << im << "i" << endl;
+        cout << "Второй корень: x2 = " << re << "+" << im << "i" << endl;
+    }
+    else if (d > 0) {
+        d = sqrt(d); // извлекаем корень из дискриминанта
+        double x1 = (-b - d) / (2 * a); // первый корень
+        double x2 = (-b + d) / (2 * a); // второй корень
+
+        cout << "Первый корень: " << "x1 = " << x1 << endl;
+        cout << "Второй корень: " << "x2 = " << x2 << endl;
+    }
+    else { // дискриминант равен нулю
+        cout << "Корень x: " << (-b / (2 * a)) << endl;
+    }
+}
+
+int main() {
     setlocale(LC_ALL, "Russian");
-    double x1, x2;
-    cout << "Программа вычисления корней квадратного уравнения.\n";
-    input();
-   
-    
-        switch (Myroot(a, b, c, x1, x2))
-        {
-        case 1:
-            cout << "Уравнение имеет 2 корня.\nx1 = " << x1 << "\n x2 = " << x2 << endl;
-            break;
-        case 0:
-            cout << "Уравнение имеет 1 корень.\nx = " << x1 << endl;
-            break;
-        case -1:
-            cout << "Уравнение не имеет корней." << endl;
-        }
-    
-    return 0;
-}
-
-int Myroot(double a, double b, double c, double& x1, double& x2)
-{
-    double D;
-    D = pow(b, 2) - 4 * a * c;
-    if (D > 0)
-    {
-        x1 = ((-b) + sqrt(D)) / (2 * a);
-        x2 = ((-b) - sqrt(D)) / (2 * a);
-        return 1;
-    }
-    if (D == 0)
-    {
-        x1 = x2 = -(b / (2 * a));
-        return 0;
-    }
-    if (D < 0)
-    {
-        return -1;
-    }
+    cout << "Программа вычисления квадратного уровнения \n";
+    double a, b, c; // коэффициенты уравнения
+    ReadEquationCoefficients(a, b, c); // считываем коэффициенты
+    SolveEquation(a, b, c); // решаем уравнение
 }
