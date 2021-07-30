@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\types">
+      <UniqueIdentifier>{dc70fe45-dbf8-4428-b841-492d75024bd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\tools">
+      <UniqueIdentifier>{06a758f1-a96f-4a69-b25d-5fbf11035bfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\net">
+      <UniqueIdentifier>{250b18a5-c68f-4004-bc49-d70ec9845fb4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tgbot\EventHandler.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\export.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\tgbot.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\TgException.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\TgTypeParser.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\Api.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\Bot.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\EventBroadcaster.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Audio.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\CallbackGame.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\CallbackQuery.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Chat.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\ChatMember.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\ChatPermissions.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\ChatPhoto.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\ChosenInlineResult.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Contact.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Document.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\File.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\ForceReply.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Game.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\GameHighScore.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\GenericReply.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineKeyboardButton.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineKeyboardMarkup.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQuery.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResult.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultArticle.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultAudio.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultCachedAudio.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultCachedDocument.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultCachedGif.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultCachedMpeg4Gif.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultCachedPhoto.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultCachedSticker.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultCachedVideo.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultCachedVoice.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultContact.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultDocument.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultGame.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultGif.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultLocation.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultMpeg4Gif.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultPhoto.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultVenue.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultVideo.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InlineQueryResultVoice.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InputContactMessageContent.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InputFile.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InputLocationMessageContent.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InputMedia.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InputMediaAnimation.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InputMediaAudio.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InputMediaDocument.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InputMediaPhoto.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InputMediaVideo.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InputMessageContent.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InputTextMessageContent.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\InputVenueMessageContent.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Invoice.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\KeyboardButton.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\LabeledPrice.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Location.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\LoginUrl.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\MaskPosition.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Message.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\MessageEntity.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\OrderInfo.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\PhotoSize.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Poll.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\PollOption.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\PreCheckoutQuery.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\ReplyKeyboardMarkup.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\ReplyKeyboardRemove.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\ResponseParameters.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\ShippingAddress.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\ShippingOption.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\ShippingQuery.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Sticker.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\StickerSet.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\SuccessfulPayment.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Update.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\User.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\UserProfilePhotos.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Venue.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Video.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\VideoNote.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Voice.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\WebhookInfo.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\types\Animation.h">
+      <Filter>Файлы заголовков\types</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\tools\StringTools.h">
+      <Filter>Файлы заголовков\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\tools\FileTools.h">
+      <Filter>Файлы заголовков\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\net\BoostHttpOnlySslClient.h">
+      <Filter>Файлы заголовков\net</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\net\CurlHttpClient.h">
+      <Filter>Файлы заголовков\net</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\net\HttpClient.h">
+      <Filter>Файлы заголовков\net</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\net\HttpParser.h">
+      <Filter>Файлы заголовков\net</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\net\HttpReqArg.h">
+      <Filter>Файлы заголовков\net</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\net\HttpServer.h">
+      <Filter>Файлы заголовков\net</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\net\TgLongPoll.h">
+      <Filter>Файлы заголовков\net</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\net\TgWebhookLocalServer.h">
+      <Filter>Файлы заголовков\net</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\net\TgWebhookServer.h">
+      <Filter>Файлы заголовков\net</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\net\TgWebhookTcpServer.h">
+      <Filter>Файлы заголовков\net</Filter>
+    </ClInclude>
+    <ClInclude Include="tgbot\net\Url.h">
+      <Filter>Файлы заголовков\net</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
