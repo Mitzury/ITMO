@@ -1,20 +1,55 @@
-﻿// Exam.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿// Урок 20
+// Телефонная книга
 #include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+using namespace std;
+
+class Number
+{
+public:
+    string name;
+    string number;
+    Number(const Number& v) :
+        name(v.name),
+        number(v.number) {}
+    Number() {}
+    const Number& operator=(const Number& v)
+    {
+        name = v.name;
+        number = v.number;
+        return v;
+    }
+};
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    fstream f("file.txt");
+    vector<Number> telBook;
+    while (true)
+    {
+        Number t;
+        f >> t.name;
+        if (f.eof())
+            break;
+        f >> t.number;
+        if (f.eof())
+            break;
+        telBook.push_back(t);
+    }
+    while (true)
+    {
+        cout << "Введите имя (или стоп)";
+        string name;
+        cin >> name;
+        if (name == "стоп")
+            break;
+        for (int i = 0; i < telBook.size(); ++i)
+        {
+            if (telBook[i].name == name)
+                cout << name << " " << telBook[i].number << endl;
+        }
+    }
+
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
