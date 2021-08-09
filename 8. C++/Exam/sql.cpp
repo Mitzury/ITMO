@@ -10,7 +10,6 @@ char* err = 0;
 int rc;
 sqlite3_stmt* result;
 
-
 void SQLCreate(string query) {
 
 	// открываем соединение
@@ -39,7 +38,6 @@ void SQLCount(string query) {
 			sqlite3_close(db);
 
 		}
-
 		while (sqlite3_step(result) == SQLITE_ROW) {
 			fprintf(stderr, "Values in PhoneBook:  %i\n", sqlite3_column_int(result, 0));
 		}
