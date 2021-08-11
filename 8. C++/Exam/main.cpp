@@ -32,7 +32,7 @@ void SQLUpdate() {
 
 int main(int argc, char** argv) {
 	//Создание БД при первом запуске
-	string query = "CREATE TABLE IF NOT EXISTS PhoneBook(Name, Number, Desc);";
+	string query = "CREATE TABLE IF NOT EXISTS PhoneBook(Name, Number, Desc, State);";
 	SQLCreate(query);
 
 	
