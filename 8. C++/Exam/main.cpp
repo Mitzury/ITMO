@@ -14,7 +14,6 @@ void AddStudent(vector<Person*> &persons) {
     string name;
     string patronymic;
     int grade;
-
     cout << "Enter surname: ";
     cin >> surname; // считываем фамилию
     cout << "Enter name: ";
