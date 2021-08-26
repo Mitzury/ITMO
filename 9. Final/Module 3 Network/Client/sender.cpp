@@ -2,13 +2,58 @@
 #include "win_sockets.h"
 using namespace std;
 
+int recvtest(string& buff)
+{
+    WSAData wsa;
+    SOCKET sock;
+    SOCKADDR_IN server;
+    WSAStartup(MAKEWORD(2, 2), &wsa);
+    server.sin_family = AF_INET;
+    server.sin_addr.s_addr = INADDR_ANY;
+    server.sin_port = htons(22080); 
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock == INVALID_SOCKET)
+    {
+        return 0;
+    }
+    if (bind(sock, (SOCKADDR*)&server, sizeof(server)) != 0)
+    {
+        return -1;
+    }
+    if (listen(sock,SOMAXCONN) != 0)
+    {
+        return -2;
+    }
+    SOCKET client;
+    SOCKADDR_IN FromAddr;
+    int len = sizeof(SOCKADDR_IN);
+    client = accept(list_sock, (SOCKADDR*)&FromAddr, &len);
+    char* ip_client = new char[128];
+    if (client != INVALID_SOCKET)
+    {
+		sprintf(ip_client, "%3u.%3u.%3u.%3u", FromAddr.sin_addr.S_un.S_un_b.s_b1,
+		FromAddr.sin_addr.S_un.S_un_b.s_b2,
+		FromAddr.sin_addr.S_un.S_un_b.s_b3,
+		FromAddr.sin_addr.S_un.S_un_b.s_b4);
+   }
+   else
+   {
+	   printf("accept failed: %d\n", WSAGetLastError());
+           closesocket(sock);
+           WSACleanup();
+	   return -3;
+   }
+   return string(ip_clint);
+}
+
 int sender()
 {
 
 	char recvBuffer[512];
 	int result;
-
-	result = getaddrinfo("127.0.0.1", "22081", &hints, &addrResult);
+	string ip;
+        recvtest(ip);
+	result = getaddrinfo(ip.c_str(), "22081", &hints, &addrResult);
 	if (result != 0) {
 		cout << "gettaddinfo failed" << endl;
 		WSACleanup();
