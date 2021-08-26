@@ -3,12 +3,14 @@
 #define recv_s(Socket,DataPtr,Size,Other) recv( (Socket), (char *)(DataPtr), (Size), (Other))
 #define send_s(Socket,DataPtr,Size,Other) send( (Socket), (char *)(DataPtr), (Size), (Other))
 
+#define PORT 22080
+
 DWORD WINAPI receive_cmds(LPVOID lpParam)
 {
-	SOCKET current_client = (SOCKET)lpParam;
+  SOCKET current_client = (SOCKET)lpParam;
   bool data; //сюда будешь true/false присваивать
-	int res;
-	char buff[4096];
+  int res;
+  char buff[4096];
   while (res != -1)
   {
      res = recv(current_client, buff, 4096, 0);
@@ -16,7 +18,45 @@ DWORD WINAPI receive_cmds(LPVOID lpParam)
      //Здесь поместишь логику уже работы с 1C и т.д
      res = send_s(current_client,&data,sizeof(data),0);
   }
-	closesocket(current_client);
+  closesocket(current_client);
+}
+
+int ClientC(char* ip)
+{
+   addrinfo* result, * ptr, hints;
+   SOCKET sock_input = INVALID_SOCKET;
+   ZeroMemory(&hints, sizeof(hints));
+   hints.ai_family = AF_UNSPEC;
+   hints.ai_socktype = SOCK_STREAM;
+   hints.ai_protocol = IPPROTO_TCP;
+   res = getaddrinfo(ip, PORT, &hints, &result);
+   if (res != 0)
+   {
+	printf("getaddrinfo failed: %d\n", res);
+	return 0;
+   }
+   ptr = result;
+   sock_input = socket(ptr->ai_family, ptr->ai_socktype, ptr->ai_protocol); //подключаемся к предыдущему пиру
+   if (sock_input == INVALID_SOCKET)
+   {
+		printf("Error at socket(): %ld\n", WSAGetLastError());
+		return -1;
+   }
+   res = connect(sock_input, result->ai_addr, (int)result->ai_addrlen);
+   if (res == SOCKET_ERROR)
+   { 
+		closesocket(sock_input);
+		sock_input = INVALID_SOCKET;
+   }
+   freeaddrinfo(result);
+   if (sock_input == INVALID_SOCKET)
+   {
+		printf("Unable to connect to CLIENT!\n");
+		return -2;
+   }
+   res = send(sock_input,"12345",5,0);
+   closesocket(sock_input);
+   return 1;
 }
 
 int Server::Init()
@@ -66,7 +106,7 @@ int Server::Create()
 		 freeaddrinfo(addrResult);
 		 WSACleanup();
 		 return -3;
-	 }
+   }
    SOCKET client;
    SOCKADDR_IN from;
    int fromlen = sizeof(from);
@@ -76,7 +116,7 @@ int Server::Create()
        CreateThread(NULL, 0,receive_cmds,(LPVOID)client, 0, &thread);
    }
    closesocket(ClientSocket);
-	 freeaddrinfo(addrResult);
+   freeaddrinfo(addrResult);
    WSACleanup();
    return 1;
 }
