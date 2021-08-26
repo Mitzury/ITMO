@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2c1ecabd-55e6-4848-a3a5-cf3901130cd2}</ProjectGuid>
-    <RootNamespace>Server</RootNamespace>
+    <ProjectGuid>{6c168fd6-371a-4582-b34b-f0178d37529c}</ProjectGuid>
+    <RootNamespace>Project5</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Server.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="sender.cpp" />
+    <ClCompile Include="win_sockets.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="os_select.h" />
+    <ClInclude Include="win_sockets.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
