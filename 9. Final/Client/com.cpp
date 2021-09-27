@@ -4,7 +4,7 @@ using namespace std;
 
 
 
-void ReadCom()
+char ReadCom()
 {
     HANDLE hSerial;
     DWORD iSize;
@@ -37,8 +37,7 @@ void ReadCom()
     }
 
 
- 
         ReadFile(hSerial, &sReceivedChar, sizeof(sReceivedChar), &iSize, 0);  // получаем 1 байт
         if (iSize > 0)   // если что-то принято, выводим
-          
+            return  sReceivedChar;
 }

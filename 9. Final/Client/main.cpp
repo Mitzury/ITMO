@@ -39,7 +39,6 @@ int WSAStart() {
 int main(int argc, char const* argv[]) {
 
 	int result;
-	string str;
 	char recvBuffer[512];
 
 
@@ -58,10 +57,10 @@ int main(int argc, char const* argv[]) {
 	
 
 	while (1) {
-		str = ReadCOM();
+		char chars = ReadCOM();
 		//str = "JGUYR*%^!@#RIK:";
-		cout << "I'm sent: " << str << endl;
-		const char* sendBuffer = str.data();
+		cout << "I'm sent: " << chars << endl;
+		const char* sendBuffer = chars;
 
 
 		result = getaddrinfo("127.0.0.1", "22081", &hints, &addrResult);
