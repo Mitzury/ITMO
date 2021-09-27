@@ -24,12 +24,20 @@ int main(int argc, char const* argv[]) {
 	SOCKET ClientSocket = INVALID_SOCKET;
 	SOCKET ListenSocket = INVALID_SOCKET;
 
+	std::cout << "Server Starting" << std::endl;
+
 	result = WSAStartup(MAKEWORD(2, 2), &wsaData);
 	if (result != 0)
 	{
 		std::cout << "WSAStartup fail = " << result << std::endl;
 		return 1;
 	}
+	else
+	{
+		std::cout << "WSAStartup succesful" << std::endl;
+	}
+		
+	
 
 	ZeroMemory(&hints, sizeof(hints));
 
@@ -46,6 +54,10 @@ int main(int argc, char const* argv[]) {
 		WSACleanup;
 		return 1;
 	}
+	else
+	{
+		std::cout << "GetAddrInfo succesful" << std::endl;
+	}
 
 	ListenSocket = socket(addrResult->ai_family, addrResult->ai_socktype, addrResult->ai_protocol);
 	if (ListenSocket == INVALID_SOCKET) {
@@ -54,6 +66,11 @@ int main(int argc, char const* argv[]) {
 		WSACleanup;
 		return 1;
 	}
+	else
+	{
+		std::cout << "Listen Socket Creation Succesful" << std::endl;
+	}
+
 	result = bind(ListenSocket, addrResult->ai_addr, (int)addrResult->ai_addrlen);
 	if (result == SOCKET_ERROR)
 	{
@@ -99,9 +116,8 @@ int main(int argc, char const* argv[]) {
 			{
 				cout << "Reveived bytes: " << result << " from: " << client_ip << endl;
 				cout << recvBuffer << endl;
-				string b = recvBuffer;
 
-				if (b == "0")
+				if (recvBuffer == "0")
 				{
 					result = send(ClientSocket, "false", (int)strlen("false"), 0);
 				}

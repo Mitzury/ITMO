@@ -8,6 +8,7 @@
 #include <WinSock2.h>
 #include <WS2tcpip.h>
 #pragma comment (lib, "Ws2_32.lib")
+#include "com.h"
 #else // *nix
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -16,6 +17,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #endif
+#include <vector>
 
 
 using namespace std;
@@ -29,7 +31,7 @@ int WSAStart() {
 	if (WSAStart != 0)
 	{
 		std::cout << "WSAStartup fail = " << WSAStart << std::endl;
-		~WSAStart;
+		
 		return 1;
 	}
 }
@@ -44,19 +46,21 @@ int main(int argc, char const* argv[]) {
 	ADDRINFO hints;
 	ADDRINFO* addrResult = NULL;
 	SOCKET ConnectSocket = INVALID_SOCKET;
-#ifdef _WIN32
-	WSAStart();
-#endif
+	#ifdef _WIN32
+		WSAStart();
+	#endif
 	ZeroMemory(&hints, sizeof(hints));
 
 	hints.ai_family = AF_INET;
 	hints.ai_socktype = SOCK_STREAM;
 	hints.ai_protocol = IPPROTO_TCP;
 
-	do
-	{
-		cout << "Enter string:";
-		cin >> str;
+	
+
+	while (1) {
+		str = ReadCOM();
+		//str = "JGUYR*%^!@#RIK:";
+		cout << "I'm sent: " << str << endl;
 		const char* sendBuffer = str.data();
 
 
@@ -125,7 +129,9 @@ int main(int argc, char const* argv[]) {
 		else {
 			cout << "Connect failed" << endl;
 		}
-	} while (result > 0);
+
+	}
+
 
 	closesocket(ConnectSocket);
 	ConnectSocket = INVALID_SOCKET;
